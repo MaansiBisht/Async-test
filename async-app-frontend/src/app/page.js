@@ -17,7 +17,7 @@ export default function Home() {
 
     try {
       // Make POST request to FastAPI backend
-      const response = await axios.post('http://localhost:8000/search/', {
+      const response = await axios.post('http://localhost:8000/search/', { // set url according to you
         url: url,
         query: query
       });
@@ -87,9 +87,9 @@ export default function Home() {
                   key={result.chunk_id}
                   content={result.content}
                   index={index}
-                  matchPercentage={result.score} // assuming score is the match percentage
-                  path={result.path} // Ensure path is available in the result if needed
-                  html={result.html} // Pass the full HTML content
+                  matchPercentage={result.score} 
+                  path={result.path} 
+                  html={result.html} 
                 />
               ))}
             </div>
